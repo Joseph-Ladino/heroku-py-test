@@ -1,6 +1,5 @@
 import discord
-import time
-from background import keepAlive
+import os
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -15,6 +14,5 @@ class MyClient(discord.Client):
             await message.channel.send('pong')
 
 client = MyClient()
-keepAlive()
-time.sleep(1)
-client.run(input('token: '))
+token = os.getenv("DISCORD_TOKEN")
+client.run(token)
