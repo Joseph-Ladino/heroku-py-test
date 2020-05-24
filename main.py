@@ -1,3 +1,4 @@
+from test import keepAlive
 import discord
 import os
 
@@ -15,4 +16,5 @@ class MyClient(discord.Client):
 
 client = MyClient()
 token = os.getenv("DISCORD_TOKEN")
+keepAlive()
 client.run(token)
